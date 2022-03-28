@@ -6,7 +6,7 @@ GOFLAGS=build -buildmode=c-archive
 
 CFLAGS=
 
-LIBS=-lWs2_32 -lwinmm
+LIBS=-lm
 
 GO=go
 CC=gcc

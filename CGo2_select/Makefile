@@ -27,9 +27,11 @@ foo.h: foo.go
 	$(GO) $(GOFLAGS) $^
 
 foo.a: foo.go
+	./tidy.sh
 	$(GO) $(GOFLAGS) $^
 
 foo.c: foo.h
 
 foo.exe: foo.o foo.a
 	$(CC) -o $@ $^ $(LIBS)
+	./foo.exe
