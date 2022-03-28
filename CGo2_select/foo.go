@@ -46,6 +46,9 @@ func do_input() uintptr {
 	if err == widgets.ErrInputCancelled {
 		fmt.Println("User cancelled.")
 		buf := []byte(fmt.Sprintf("%s", CANCEL_STRING))
+		if len(string(buf)) < 1 {
+			buf = []byte(CANCEL_STRING)
+		}
 		return uintptr(unsafe.Pointer(&buf[0]))
 	}
 	if len(name) < 1 {
@@ -54,6 +57,9 @@ func do_input() uintptr {
 	buf := []byte(fmt.Sprintf("%s", name))
 	fmt.Fprintf(os.Stderr, "%s", buf)
 
+	if len(string(buf)) < 1 {
+		buf = []byte(CANCEL_STRING)
+	}
 	return uintptr(unsafe.Pointer(&buf[0]))
 }
 
