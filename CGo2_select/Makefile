@@ -1,13 +1,9 @@
 # Makefile for MINGW64/MSYS2 + opencv-2.4.13.5
 
 TARGETS=foo.exe
-
 GOFLAGS=build -buildmode=c-archive
-
 CFLAGS=
-
 LIBS=
-
 GO=go
 CC=gcc
 RM=rm -f
